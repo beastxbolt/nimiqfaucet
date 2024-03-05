@@ -1,0 +1,6 @@
+flask
+flask_hcaptcha
+psycopg2-binary
+requests
+gunicorn
+numpy

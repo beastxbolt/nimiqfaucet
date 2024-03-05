@@ -1,0 +1,124 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div class="container">
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 22 18">
+      <path
+        d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+    </symbol>
+
+  </svg>
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  {% for msg in messages %}
+  <div class="alert alert-warning d-flex align-items-center" role="alert">
+    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+      <use xlink:href="#exclamation-triangle-fill" />
+    </svg>
+    <div>{{ msg }}</div>
+  </div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+
+  <div class="page-banner home-banner">
+    <div class="row align-items-center flex-wrap-reverse h-100">
+      <div class="col-md-6 py-2">
+        <h1 class="mb-4">What is Nimiq?</h1>
+        <p class="text-lg text-grey mb-5">Nimiq is a browser-based Blockchain designed for simplicity. Nimiq’s reason
+          for existence is to bring the benefits of blockchain technology to the mainstream.</p>
+        <p>To create a Nimiq wallet and get more information on Nimiq visit <a href="https://nimiq.com"
+            target="_blank">nimiq.com</a></p>
+      </div>
+      <div class="col-md-6 py-2">
+        <div class="img-fluid text-center">
+          <img src="../static/img/cryptovector.png" height="auto" width="100%">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var detector = function () {
+
+    if (!document.getElementsByClassName) return;
+    var ads =
+      document.getElementsByClassName('banner_ad'),
+      ad = ads[ads.length - 1];
+
+    if (!ad || ad.innerHTML.length == 0
+      || ad.clientHeight === 0) {
+      window.location.replace("/adblock");
+    } else {
+      /* pass */
+    }
+  }
+  detector();
+</script>
+
+<div class="page-section" id="about">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 py-3">
+        <span class="subhead">No waiting time..</span>
+        <h2 class="title-section">Nimiq is sent to your wallet within a matter of seconds. Get your nimiq tokens now!
+        </h2>
+        <div class="divider"></div>
+
+        <form id="faucet_form" method="post" action="/status">
+          <div class="form-group">
+            <label for="wallet_address">Wallet Address</label>
+            <input type="text" class="form-control" name="wallet_address" aria-describedby="textHelp"
+              placeholder="Enter Nimiq Wallet Address" required>
+          </div>
+          <script src="https://hcaptcha.com/1/api.js" async defer></script>
+          <!-- hCaptcha site key below -->
+          <!-- <div class="h-captcha" data-sitekey="d193f251-68d6-444a-921c-8314fe437aef"></div> -->
+          <button type="submit" class="btn btn-primary">GET NIM</button>
+        </form>
+      </div>
+      <div class="col-lg-6 py-3">
+        <div class="img-fluid py-3 text-center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-section banner-info">
+  <div class="wrap bg-image" style="background-image: url(../static/img/bg_pattern.svg);">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 py-3 pr-lg-5">
+          <h2 class="title-section">What is Nimiq Faucet?</h2>
+          <div class="divider"></div>
+          <p>Nimiq Faucet is a website that collects nimiq tokens from contributors, then redistributes those bit-by-bit
+            to users who want a share of it. The main goal of a faucet is to help people who have no, or few, getting
+            some free nimiq tokens to begin. One can request nimiq token every 15 min.</p>
+
+          <ul class="theme-list theme-list-light text-white">
+            <li>
+              <div class="h5">Instant Payments</div>
+              <p>We don't make you wait for days to collect and get nimiq tokens. We send them instantly!</p>
+            </li>
+            <li>
+              <div class="h5">Less Waiting Time</div>
+              <p>We allow all the users to get Nimiq token every 15 min so that you can get a sweet amount of Nimiq
+                daily.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-6 py-3">
+          <div class="img-fluid text-center">
+            <img src="../static/img/nim.png" height="auto" width="100%">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="shortcut icon" href="{{ url_for('static', filename='img/nimiq-logo.svg') }}">
+  <meta name="copyright" content="Nimiq Faucet, https://nimiqfaucet.xyz">
+  <meta name="description" content="Nimiq Faucet is a site that gives NIM token every 15 min for free.">
+  <meta name="keywords" content="nimiq faucet, crypto faucet, get free crypto">
+
+  <title>Transaction | Nimiq Faucet</title>
+  <!-- Google Tag Manager below for analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-4EGRMZE4M0');
+  </script> -->
+
+  <link rel="stylesheet" href="../static/css/flipclock.css">
+  <link rel="stylesheet" href="../static/css/maicons.css">
+  <link rel="stylesheet" href="../static/css/bootstrap.css">
+  <link rel="stylesheet" href="../static/vendor/animate/animate.css">
+  <link rel="stylesheet" href="../static/css/theme.css">
+  <link rel="stylesheet" href="../static/css/placement.css">
+
+</head>
+
+<body>
+
+  <div class="back-to-top"></div>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky" data-offset="500">
+      <div class="container">
+
+        <a href="/" class="navbar-brand"><img src="../static/img/nimiq-logo.svg" width="30" height="30"> Nimiq<span
+            class="text-primary">Faucet.</span></a>
+
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="navbarContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/offerwall">Offerwall</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/donate">Donate</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/faq">F.A.Q.</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary ml-lg-2" href="https://discord.gg" target="_blank">Discord Support
+                Server</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+
+
+
+  <div class="page-section" id="tnsinfo">
+    <div class="container">
+      <!--Ad here-->
+      <div class="row align-items-center">
+        <div class="col-lg-6 py-3">
+          <h1 class="title-section">Transaction Successful!
+          </h1>
+          <div class="divider"></div>
+
+          <p><b>{{ session_value_nimtoshis }}</b> Nimiq has been sent your wallet addrees: {{ session_wallet_address }}
+            <br><a href="https://nimiq.watch/#{{ session_hash }}" target="_blank">Click here</a> to check your
+            transaction info.
+          </p>
+          <p>Complete <a href="/offerwall">Offerwall</a> to earn more NIM.
+          <p>You can request for more tokens again in:</p>
+          <br>
+          <div class="clock"></div>
+          <br>
+          <!---->
+          <br>
+          <a class="btn btn-primary" href="/">Back To Home</a>
+          <br>
+
+        </div>
+        <div class="col-lg-6 py-3">
+          <div class="img-fluid py-3 text-center">
+            <img src="../static/img/transaction-success.jpg" height="auto" width="100%">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="page-section banner-info">
+    <div class="wrap bg-image" style="background-image: url(../static/img/bg_pattern.svg);">
+      <div class="container">
+        <div class="row align-items-center">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="page-footer bg-image" style="background-image: url(../static/img/world_pattern.svg);">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-3 py-3">
+          <h3>Nimiq Faucet</h3>
+          <p>A Nimiq faucet where you can get NIM token for free every 15 min.</p>
+
+          <div class="social-media-button">
+            <a href="https://discord.gg" target="_blank"><span class="mai-logo-discord"></span></a>
+          </div>
+        </div>
+        <div class="col-lg-4 py-3">
+          <h5>Quick Links</h5>
+          <ul class="footer-menu">
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/disclaimer">Disclaimer</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/about">About Us</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-5 py-3">
+          <h5>Help & Support</h5>
+          <p>You can reach out to us on Discord if you need assistance.</p>
+          <a href="/contact" class="footer-link">Join our Support Server.</a>
+        </div>
+      </div>
+
+      <p class="text-center" id="copyright">Copyright &copy; 2024. <a href="/">Nimiq Faucet</a></p>
+    </div>
+  </footer>
+
+  <script src="../static/js/jquery-3.5.1.min.js"></script>
+  <script src="../static/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/js/google-maps.js"></script>
+  <script src="../static/vendor/wow/wow.min.js"></script>
+  <script src="../static/js/theme.js"></script>
+  <script src="../static/js/flipclock.js"></script>
+
+  <script type="text/javascript">
+    var time = parseInt("{{ cooldown_time }}")
+    var clock;
+
+    $(document).ready(function () {
+      clock = $('.clock').FlipClock(time, {
+        clockFace: 'MinuteCounter',
+        countdown: true
+      });
+    });
+  </script>
+
+</body>
+
+</html>
